@@ -91,7 +91,15 @@ pnpm i @umijs/max -D
 {
     layout: {
         name: '长沙学院',
-        logo:"xxx"
+        logo:"https://mdn.alipayobjects.com/huamei_ptjqan/afts/img/A*rsC_RIi8Ms0AAAAAAAAAAAAADkN6AQ/original"
     },
 }
 ```
+
+接下来我们要参考官网文档，逐步增加功能
+
+- 国际化
+- 菜单
+- openapi
+- curd 表格
+- 代理
