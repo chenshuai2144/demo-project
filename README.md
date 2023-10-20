@@ -74,3 +74,24 @@ pnpm run start
 ![启动](./B182905C-FFC0-449a-83D3-8DD2582C68C7.png)
 
 ## 增加 layout 功能
+
+首先我们将 umi 替换为 @umijs/max，因为 @umijs/max 是 umi 的增强版，提供了更多的功能，能减少我们很多的配置。
+
+```shell
+pnpm i @umijs/max -D
+```
+
+然后我们全局替换一下，将 umi 替换为 @umijs/max
+
+![](./屏幕截图-2023-10-20-113637.png)
+
+然后我们就可以在 umirc,ts 中配置 layout 了
+
+```tsx
+{
+    layout: {
+        name: '长沙学院',
+        logo:"xxx"
+    },
+}
+```
