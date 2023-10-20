@@ -96,10 +96,64 @@ pnpm i @umijs/max -D
 }
 ```
 
+## umi-presets-pro 功能
+
+umi-presets-pro 提供了 openapi 的功能，这个功能非常重要是我们之后开展 crud 的基础，所以我们要安装这个插件
+
+```shell
+pnpm i umi-presets-pro -D
+```
+
+之后更新 config.ts 的配置
+
+```tsx
+        /**
+   * @name 代理配置
+   * @description 可以让你的本地服务器代理到你的服务器上，这样你就可以访问服务器的数据了
+   * @see 要注意以下 代理只能在本地开发时使用，build 之后就无法使用了。
+   * @doc 代理介绍 https://umijs.org/docs/guides/proxy
+   * @doc 代理配置 https://umijs.org/docs/api/config#proxy
+   */
+    proxy: {
+      // localhost:8000/api/** -> https://preview.pro.ant.design/api/**
+      '/api/': {
+        target: 'https://proapi.azurewebsites.net',
+        changeOrigin: true,
+        pathRewrite: { '^': '' },
+      },
+    },
+  //================ pro 插件配置 =================
+  presets: ['umi-presets-pro'],
+  /**
+   * @name openAPI 插件的配置
+   * @description 基于 openapi 的规范生成serve 和mock，能减少很多样板代码
+   * @doc https://pro.ant.design/zh-cn/docs/openapi/
+   */
+  openAPI: [
+    {
+      requestLibPath: "import { request } from '@umijs/max'",
+      // 或者使用在线的版本
+      // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
+      schemaPath: join(__dirname, 'oneapi.json'),
+      mock: false,
+      projectName: 'ant-design-pro',
+    },
+    {
+      requestLibPath: "import { request } from '@umijs/max'",
+      schemaPath:
+        'https://gw.alipayobjects.com/os/antfincdn/CA1dOm%2631B/openapi.json',
+      projectName: 'swagger',
+    },
+  ],
+```
+
 接下来我们要参考官网文档，逐步增加功能
 
 - 国际化
 - 菜单
-- openapi
 - curd 表格
-- 代理
+
+- https://umijs.org/docs/guides/getting-started
+- https://ant-design.antgroup.com/components/overview-cn/
+- https://pro-components.antdigital.dev/
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
