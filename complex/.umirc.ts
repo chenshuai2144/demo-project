@@ -2,8 +2,6 @@
 import { defineConfig } from '@umijs/max';
 import { join } from 'path';
 
-const { REACT_APP_ENV = 'dev' } = process.env;
-
 export default defineConfig({
   /**
    * @name 开启 hash 模式
