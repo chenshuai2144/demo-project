@@ -36,7 +36,7 @@ export default defineConfig({
     },
     {
       path: 'list',
-      icon: 'UnorderedListOutlined',
+      icon: 'TableOutlined',
       name: '列表',
       component: 'TableList',
     },
@@ -70,7 +70,14 @@ export default defineConfig({
    * @doc 代理介绍 https://umijs.org/docs/guides/proxy
    * @doc 代理配置 https://umijs.org/docs/api/config#proxy
    */
-  proxy: {},
+  proxy: {
+    // localhost:8000/api/** -> https://preview.pro.ant.design/api/**
+    '/api/': {
+      target: 'https://proapi.azurewebsites.net',
+      changeOrigin: true,
+      pathRewrite: { '^': '' },
+    },
+  },
   /**
    * @name 快速热更新配置
    * @description 一个不错的热更新组件，更新时可以保留 state
