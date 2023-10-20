@@ -96,6 +96,36 @@ pnpm i @umijs/max -D
 }
 ```
 
+在  router  配置中增加你喜欢的 icon 和标题
+
+
+```
+ routes: [
+    { path: '/', icon: 'HomeOutlined', name: '主页', component: 'index' },
+    {
+      path: '/docs',
+      icon: 'FileDoneOutlined',
+      name: '文档',
+      component: 'docs',
+    },
+    {
+      path: 'list',
+      icon: 'TableOutlined',
+      name: '列表',
+      component: 'TableList',
+    },
+    {
+      icon: 'GithubOutlined',
+      path: 'https://github.com/umijs/umi',
+      name: 'github',
+    },
+  ],
+```
+
+### 参考文档
+
+- https://ant-design.antgroup.com/components/icon-cn
+
 ## umi-presets-pro 功能
 
 umi-presets-pro 提供了 openapi 的功能，这个功能非常重要是我们之后开展 crud 的基础，所以我们要安装这个插件
