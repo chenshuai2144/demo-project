@@ -1,5 +1,11 @@
 ﻿## 一步步搭建一个复杂的项目
 
+## 初始化环境
+
+window 可以参考这个配置，能搞出来一个比较好的开发环境
+
+https://www.yuque.com/chenshuai/web/kyw98b
+
 ## 初始化项目
 
 ```shell
@@ -96,8 +102,7 @@ pnpm i @umijs/max -D
 }
 ```
 
-在  router  配置中增加你喜欢的 icon 和标题
-
+在 router 配置中增加你喜欢的 icon 和标题
 
 ```
  routes: [
