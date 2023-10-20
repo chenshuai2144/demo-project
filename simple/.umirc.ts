@@ -1,9 +1,9 @@
-import { defineConfig } from 'umi';
+import { defineConfig } from "umi";
 
 export default defineConfig({
-  nodeModulesTransform: {
-    type: 'none',
-  },
-  routes: [{ path: '/', component: '@/pages/index' }],
-  fastRefresh: {},
+  routes: [
+    { path: "/", component: "index" },
+    { path: "/docs", component: "docs" },
+  ],
+  npmClient: "pnpm",
 });
